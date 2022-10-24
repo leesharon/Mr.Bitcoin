@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+// "stylePreprocessorOptions": {
+//     "includePaths": ["src/sass"]
+// }
+
+// SETUP
+@import "../src/assets/styles/setup/normalize";
+@import "../src/assets/styles/setup/typography";
+
+// BASICS
+@import "../src/assets/styles/basics/base";
+// @import "../src/assets/styles/basics/layout";

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core"
 import { Observable, BehaviorSubject, of, throwError } from "rxjs"
-import { Contact } from "./contact.model"
+import { Contact } from "../models/contact.model"
 
 const CONTACTS = [
     {
@@ -201,7 +201,7 @@ export class ContactService {
         })
     }
 
-    private _filter(contacts, term) {
+    private _filter(contacts: Contact[], term: string) {
         term = term.toLocaleLowerCase()
         return contacts.filter(contact => {
             return (
