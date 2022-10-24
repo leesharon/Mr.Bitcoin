@@ -1,9 +1,16 @@
 <section class="app-header main-layout full">
     <div class="layout-container">
-        <div>Logo</div>
+        <div class="main-logo">
+            <img src="../../../assets/img/bitcoin.png" alt="bitcoin" />
+            <h1>Mr.Bitcoin</h1>
+        </div>
         <nav class="navbar">
-            <a>Home</a>
-            <a>About</a>
+            <a>Wallet</a>
+            <a>Contacts</a>
+            <a>Statistics</a>
+            <div class="seperator"></div>
+            <a *ngIf="loggedinUser">Logout</a>
+            <a *ngIf="!loggedinUser">Signup</a>
         </nav>
     </div>
 </section>
