@@ -7,7 +7,8 @@ import { AppComponent } from './app.component'
 import { AppHeaderComponent } from './components/app-header/app-header.component'
 import { ContactComponent } from './pages/contact/contact.component'
 import { ContactListComponent } from './components/contact-list/contact-list.component';
-import { ContactPreviewComponent } from './components/contact-preview/contact-preview.component'
+import { ContactPreviewComponent } from './components/contact-preview/contact-preview.component';
+import { ContactFilterComponent } from './components/contact-filter/contact-filter.component'
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ContactPreviewComponent } from './components/contact-preview/contact-pr
     ContactComponent,
     ContactListComponent,
     ContactPreviewComponent,
+    ContactFilterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

@@ -1,3 +1,9 @@
-<section *ngIf="contacts$" class="contacts">
-  <contact-list [contacts]="(contacts$ | async)!"></contact-list>
+<section *ngIf="contacts$" class="main-layout contacts">
+  <div class="contacts-container">
+    <contact-filter class="contact-filter"></contact-filter>
+    <contact-list
+      class="contact-list"
+      [contacts]="(contacts$ | async)!"
+    ></contact-list>
+  </div>
 </section>
