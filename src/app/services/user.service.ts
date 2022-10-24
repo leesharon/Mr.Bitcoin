@@ -8,9 +8,9 @@ export class UserService {
 
     getUser() {
         return {
-            name: "Ochoa Hyde",
-            coins: 100,
-            moves: [],
+            name: "Lee Sharon",
+            balance: 100,
+            transactions: [],
         }
     }
 }

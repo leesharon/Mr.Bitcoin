@@ -1,0 +1,34 @@
+@import "../../../assets/styles/setup/mixins";
+
+.wallet {
+    height: 500px;
+    background-color: #0b1426;
+    border-radius: 25px;
+    width: 90%;
+    margin: auto;
+    margin-top: 60px;
+    box-shadow: 0 0 45px 8px #146dacc7;
+    border: 1px solid white;
+
+    .info {
+        margin-top: 20px;
+        margin-inline-start: 25px;
+    }
+
+    .balance {
+        max-width: 50%;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        p {
+            margin-bottom: 8px;
+        }
+
+        .btn-contacts {
+            @include primaryButton();
+        }
+    }
+}

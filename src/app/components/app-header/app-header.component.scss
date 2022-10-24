@@ -29,6 +29,13 @@
         display: flex;
         gap: 15px;
 
+        .icon-wallet {
+            svg {
+                color: "white";
+                background-color: white;
+            }
+        }
+
         a {
             height: 60px;
             transition: color 0.2s;

@@ -1,20 +1,31 @@
+import { HttpClient } from "@angular/common/http"
 import { Injectable } from "@angular/core"
+import { Observable } from "rxjs"
 
 @Injectable({
     providedIn: "root",
 })
 export class BitcoinService {
-    constructor() {}
+    constructor(private http: HttpClient) {}
 
-    // getRate(amountUSD: number) {
-    //     try {
-    //         const { data } = await axios.get(
-    //             `https://blockchain.info/tobtc?currency=USD&value=${amountUSD}`
-    //         )
-    //         return data
-    //     } catch (err) {
-    //         console.log(err, "Cannot get rates")
-    //     }
+    public getMarketPriceHistory(): Observable<{}> {
+        try {
+            const data = this.http.get<{ answer: {} }>(
+                `https://api.blockchain.info/charts/market-price?cors=true`
+            )
+            // .pipe(map(res => res.answer))
+            console.log("BitcoinService ~ getRate ~ data", data)
+            return data
+        } catch (err) {
+            console.log(err, "Cannot get rates")
+            throw new Error()
+        }
+    }
+
+    // public shouldAdoptPet() {
+    //     return this.http
+    //         .get<{ answer: string }>("https://yesno.wtf/api")
+    //         .pipe(map(res => res.answer))
     // }
 
     // getMarketPriceHistory() {
