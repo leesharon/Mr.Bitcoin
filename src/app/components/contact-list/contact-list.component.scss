@@ -1,0 +1,8 @@
+.contact-list {
+  display: flex;
+  flex-direction: column;
+
+  & > *:not(:last-child) {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
+  }
+}

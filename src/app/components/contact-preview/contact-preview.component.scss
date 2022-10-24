@@ -1,0 +1,13 @@
+.contact-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+
+  .img-container {
+    width: 75px;
+    img {
+      border-radius: 50%;
+    }
+  }
+}
