@@ -9,6 +9,7 @@ html {
 body {
   margin: 0;
   background-color: #0b1426;
+  color: white;
 }
 
 h1,
@@ -26,6 +27,10 @@ img {
 
 ul {
   list-style: none;
+}
+
+input:focus {
+  outline-width: 0;
 }
 
 p {

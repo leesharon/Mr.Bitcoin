@@ -1,0 +1,30 @@
+<section class="contact-details">
+    <div class="img-container">
+        <img
+            src="https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
+            alt="contact"
+        />
+    </div>
+    <div class="contact-info">
+        <div class="info-header">
+            <button class="btn-back">Back</button>
+            <span>{{ contact.phone }}</span>
+        </div>
+        <div class="info-body">
+            <h2>{{ contact.name }}</h2>
+            <h3>{{ contact.email }}</h3>
+            <form (submit)="onSubmit()">
+                <input type="number" placeholder="Enter amount to transfer" />
+                <button class="btn-transfer">Transfer</button>
+            </form>
+            <p>
+                The amount to be transferred is in USD. Once the transaction is
+                complete there is no way to reverse it.
+            </p>
+        </div>
+        <div class="info-footer">
+            <button class="btn-edit">Edit contact</button>
+            <button class="btn-remove">Delete Contact</button>
+        </div>
+    </div>
+</section>
