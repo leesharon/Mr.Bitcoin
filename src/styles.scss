@@ -6,7 +6,9 @@
 // SETUP
 @import "../src/assets/styles/setup/normalize";
 @import "../src/assets/styles/setup/typography";
+@import "../src/assets/styles/setup/variables";
+@import "../src/assets/styles/setup/mixins";
 
 // BASICS
 @import "../src/assets/styles/basics/base";
-// @import "../src/assets/styles/basics/layout";
+@import "../src/assets/styles/basics/layout";
