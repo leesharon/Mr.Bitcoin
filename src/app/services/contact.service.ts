@@ -155,8 +155,11 @@ export class ContactService {
 
   public query() {
     const filterBy = this._filterBy$.value
-    const contacts = this._contactsDb.filter(({ name }) => {
-      return name.toLowerCase().includes(filterBy.term.toLowerCase())
+    const contacts = this._contactsDb.filter(({ name, email }) => {
+      return (
+        name.toLowerCase().includes(filterBy.term.toLowerCase()) ||
+        email.toLowerCase().includes(filterBy.term.toLowerCase())
+      )
     })
     this._contacts$.next(this._sort(contacts))
   }
@@ -183,6 +186,11 @@ export class ContactService {
     return contact._id
       ? this._updateContact(contact)
       : this._addContact(contact)
+  }
+
+  public setFilter(filterBy: ContactFilter) {
+    this._filterBy$.next(filterBy)
+    this.query()
   }
 
   private _updateContact(contact: Contact) {
@@ -216,16 +224,16 @@ export class ContactService {
     })
   }
 
-  private _filter(contacts: Contact[], term: string) {
-    term = term.toLocaleLowerCase()
-    return contacts.filter((contact) => {
-      return (
-        contact.name.toLocaleLowerCase().includes(term) ||
-        contact.phone.toLocaleLowerCase().includes(term) ||
-        contact.email.toLocaleLowerCase().includes(term)
-      )
-    })
-  }
+  //   private _filter(contacts: Contact[], term: string) {
+  //     term = term.toLocaleLowerCase()
+  //     return contacts.filter((contact) => {
+  //       return (
+  //         contact.name.toLocaleLowerCase().includes(term) ||
+  //         contact.phone.toLocaleLowerCase().includes(term) ||
+  //         contact.email.toLocaleLowerCase().includes(term)
+  //       )
+  //     })
+  //   }
 }
 
 function getRandomId(length = 8): string {

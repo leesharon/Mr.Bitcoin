@@ -4,5 +4,10 @@
   </h1>
   <div class="seperator"></div>
   <p>Don't stay with any open checks...</p>
-  <input type="text" placeholder="Search by name or email" />
+  <input
+    [(ngModel)]="filterBy.term"
+    (ngModelChange)="onSetFilter()"
+    type="text"
+    placeholder="Search by name or email"
+  />
 </section>
