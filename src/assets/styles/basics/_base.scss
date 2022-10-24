@@ -9,6 +9,7 @@ html {
 body {
     margin: 0;
     background-color: #0b1426;
+    color: white;
 }
 
 h1,
@@ -28,6 +29,10 @@ ul {
     list-style: none;
 }
 
+input:focus {
+    outline-width: 0;
+}
+
 p {
     margin: 0;
 }
@@ -36,6 +41,7 @@ button {
     font-family: inherit;
     cursor: pointer;
     border: none;
+    color: inherit;
 }
 
 a {
