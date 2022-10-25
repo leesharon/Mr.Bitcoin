@@ -1,15 +1,16 @@
 .contact-preview {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  color: white;
-  margin: 7px 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    margin: 7px 0;
 
-  .img-container {
-    width: 75px;
-    img {
-      border-radius: 50%;
+    .img-container {
+        width: 75px;
+        img {
+            border-radius: 50%;
+        }
     }
-  }
 }
