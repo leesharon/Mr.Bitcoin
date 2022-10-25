@@ -15,6 +15,12 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        cursor: pointer;
+        transition: color 0.1s;
+
+        &:hover {
+            color: #1199fa;
+        }
 
         img {
             width: 40px;
