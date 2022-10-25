@@ -1,3 +1,5 @@
+@import '../../../assets/styles/setup/mixins';
+
 .contact-filter {
   display: flex;
   flex-direction: column;
@@ -18,20 +20,6 @@
   }
 
   input {
-    margin-block-start: 10px;
-    height: 51px;
-    padding: 13px 16px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    line-height: 1.15;
-    width: 100%;
-    font-size: 18px;
-    border: none;
-    background: #1b2332;
-    color: white;
-
-    &:focus {
-      outline-width: 0;
-    }
+    @include primaryInput();
   }
 }

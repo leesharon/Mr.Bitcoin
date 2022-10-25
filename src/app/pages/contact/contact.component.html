@@ -1,21 +1,20 @@
 <section *ngIf="contacts$" class="main-layout contacts">
-    <div class="contacts-container">
-        <section class="left">
-            <contact-filter class="contact-filter"></contact-filter>
-            <div class="contact-add">
-                <h2>Add a new friend!</h2>
-                <p>
-                    Do you have some friends which are not on your contact list
-                    yet? feel free to add them now!
-                </p>
-                <button (click)="onAddContact()" class="btn-add">
-                    Add new contact
-                </button>
-            </div>
-        </section>
-        <contact-list
-            class="contact-list"
-            [contacts]="(contacts$ | async)!"
-        ></contact-list>
-    </div>
+  <div class="contacts-container">
+    <section class="left">
+      <contact-filter class="contact-filter"></contact-filter>
+      <div class="contact-add">
+        <h2>Add a new friend!</h2>
+        <p>
+          Do you have some friends which are not on your contact list yet? feel
+          free to add them now!
+        </p>
+        <button routerLink="edit" class="btn-add">Add new contact</button>
+      </div>
+    </section>
+    <contact-list
+      class="contact-list"
+      [contacts]="(contacts$ | async)!"
+    ></contact-list>
+  </div>
 </section>
+<router-outlet></router-outlet>
