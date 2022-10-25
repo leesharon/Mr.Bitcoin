@@ -1,13 +1,39 @@
+@import "../../../assets/styles/setup/mixins";
+
 .contacts {
-  .contacts-container {
-    justify-content: space-around;
+    margin-top: 70px;
+    .contacts-container {
+        justify-content: space-around;
 
-    .contact-filter {
-      width: 40%;
-    }
+        .left {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-    .contact-list {
-      width: 40%;
+            .contact-add {
+                h2 {
+                    margin-bottom: 12px;
+                    font-size: 1.8em;
+                }
+
+                p {
+                    font-size: 1.2em;
+                    line-height: 27px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .btn-add {
+                @include primaryButton();
+                color: inherit;
+                font-family: Dosis-Bold;
+                margin-bottom: 5px;
+            }
+        }
+
+        .contact-list {
+            width: 40%;
+        }
     }
-  }
 }
