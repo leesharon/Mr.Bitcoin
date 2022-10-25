@@ -1,54 +1,54 @@
-@import '../../../assets/styles/setup/mixins';
+@import "../../../assets/styles/setup/mixins";
 
 .contact-edit {
-  width: 450px;
-  height: 45%;
-  position: fixed;
-  inset: 0;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px;
-  background-color: #0b1426;
-  border-radius: 25px;
-  box-shadow: 0 0 45px 8px #146dacc7;
-  border: 1px solid white;
-
-  h2 {
-    margin-bottom: 10px;
-  }
-
-  a {
-    position: absolute;
-    top: 10px;
-    right: 22px;
-    font-size: 1.8em;
-
-    &:hover {
-      color: #146dacc7;
-    }
-  }
-
-  form {
+    width: 450px;
+    height: 45%;
+    position: fixed;
+    inset: 0;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    margin-top: 16px;
-    width: 100%;
     align-items: center;
+    padding: 33px;
+    background-color: #0b1426;
+    border-radius: 25px;
+    box-shadow: 0 0 45px 8px #146dacc7;
+    border: 1px solid white;
 
-    input {
-      @include primaryInput(100%);
-      margin-bottom: 5px;
+    h2 {
+        margin-bottom: 10px;
     }
 
-    button {
-      width: 100%;
-      color: white;
-      margin: 16px 0;
-      height: 51px;
-      font-size: 1.2em;
-      @include primaryButton();
+    a {
+        position: absolute;
+        top: 10px;
+        right: 22px;
+        font-size: 1.8em;
+
+        &:hover {
+            color: #146dacc7;
+        }
     }
-  }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+        width: 100%;
+        align-items: center;
+
+        input {
+            @include primaryInput(100%);
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 100%;
+            color: white;
+            margin-top: 24px;
+            height: 51px;
+            font-size: 1.2em;
+            @include primaryButton();
+        }
+    }
 }

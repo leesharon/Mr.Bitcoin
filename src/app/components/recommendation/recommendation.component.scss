@@ -1,0 +1,71 @@
+.recommendations {
+    margin-top: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+
+    .heading-container {
+        width: 80%;
+        margin-bottom: 46px;
+
+        h2:first-of-type {
+            margin-bottom: -5px;
+        }
+
+        h2 {
+            font-family: livvic-bold;
+            font-size: 2.2em;
+            font-weight: 700;
+
+            span {
+                color: #139bf9;
+            }
+        }
+    }
+
+    .recommendations-container {
+        display: flex;
+        gap: 15px;
+
+        article {
+            max-width: 350px;
+        }
+
+        .quotes {
+            width: 67px;
+            margin-bottom: -24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 19px;
+            color: #75859f;
+        }
+
+        h3 {
+            color: #139bf9;
+            font-family: livvic-bold;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 28px;
+            margin-bottom: 8px;
+        }
+
+        h4 {
+            font-family: livvic-medium-italic;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 18px;
+            margin-bottom: 25px;
+        }
+
+        .profile-pic {
+            width: 62px;
+            border-radius: 50%;
+            border: 2px solid #139bf9;
+        }
+    }
+}
