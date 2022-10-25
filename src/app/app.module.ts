@@ -8,6 +8,9 @@ import { AppHeaderComponent } from "./components/app-header/app-header.component
 import { ContactComponent } from "./pages/contact/contact.component"
 import { ContactListComponent } from "./components/contact-list/contact-list.component"
 import { ContactPreviewComponent } from "./components/contact-preview/contact-preview.component"
+import { ContactFilterComponent } from "./components/contact-filter/contact-filter.component"
+import { StatisticComponent } from "./pages/statistic/statistic.component"
+import { ChartComponent } from "./components/chart/chart.component"
 
 @NgModule({
     declarations: [
@@ -17,6 +20,8 @@ import { ContactPreviewComponent } from "./components/contact-preview/contact-pr
         ContactListComponent,
         ContactPreviewComponent,
         ContactFilterComponent,
+        StatisticComponent,
+        ChartComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [],

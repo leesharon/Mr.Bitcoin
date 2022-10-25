@@ -1,10 +1,31 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core"
+import { RouterModule, Routes } from "@angular/router"
+import { ContactDetailsComponent } from "./components/contact-details/contact-details.component"
+import { ContactComponent } from "./pages/contact/contact.component"
+import { StatisticComponent } from "./pages/statistic/statistic.component"
+import { WalletComponent } from "./pages/wallet/wallet.component"
 
-const routes: Routes = [];
+const routes: Routes = [
+    {
+        path: "contact/:id",
+        component: ContactDetailsComponent,
+    },
+    {
+        path: "contact",
+        component: ContactComponent,
+    },
+    {
+        path: "wallet",
+        component: WalletComponent,
+    },
+    {
+        path: "statistics",
+        component: StatisticComponent,
+    },
+]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
