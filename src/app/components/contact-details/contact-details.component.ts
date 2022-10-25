@@ -1,24 +1,37 @@
-import { Component, OnInit } from "@angular/core"
-import { Contact } from "src/app/models/contact.model"
+import { Component, OnDestroy, OnInit } from '@angular/core'
+import { ActivatedRoute, Router } from '@angular/router'
+import { Subscription } from 'rxjs'
+import { Contact } from 'src/app/models/contact.model'
+import { ContactService } from 'src/app/services/contact.service'
 
 @Component({
-    selector: "contact-details",
-    templateUrl: "./contact-details.component.html",
-    styleUrls: ["./contact-details.component.scss"],
+  selector: 'contact-details',
+  templateUrl: './contact-details.component.html',
+  styleUrls: ['./contact-details.component.scss'],
 })
-export class ContactDetailsComponent implements OnInit {
-    constructor() {}
+export class ContactDetailsComponent implements OnInit, OnDestroy {
+  constructor(
+    private contactService: ContactService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-    contact: Contact = {
-        _id: "5a56640269f443a5d64b32ca",
-        name: "Ochoa Hyde",
-        email: "ochoahyde@renovize.com",
-        phone: "+1 (968) 593-3824",
-    }
+  contact!: Contact
+  paramsSubscription!: Subscription
 
-    ngOnInit(): void {}
+  async ngOnInit() {
+    this.paramsSubscription = this.route.data.subscribe((data) => {
+      console.log(`data:`, data)
+      const contact = data['contact']
+      if (contact) this.contact = contact
+    })
+  }
 
-    onSubmit() {
-        console.log(": submit transfer")
-    }
+  ngOnDestroy(): void {
+    this.paramsSubscription.unsubscribe()
+  }
+
+  onSubmit() {
+    console.log(': submit transfer')
+  }
 }

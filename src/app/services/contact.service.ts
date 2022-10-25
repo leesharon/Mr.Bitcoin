@@ -1,3 +1,4 @@
+import { StorageService } from './storage.service'
 import { Injectable } from '@angular/core'
 import { Observable, BehaviorSubject, of, throwError } from 'rxjs'
 import { Contact, ContactFilter } from '../models/contact.model'
@@ -151,16 +152,19 @@ export class ContactService {
   private _filterBy$ = new BehaviorSubject<ContactFilter>({ term: '' })
   public filterBy$ = this._filterBy$.asObservable()
 
-  constructor() {}
+  constructor(private storageService: StorageService) {}
 
   public query() {
     const filterBy = this._filterBy$.value
-    const contacts = this._contactsDb.filter(({ name, email }) => {
-      return (
-        name.toLowerCase().includes(filterBy.term.toLowerCase()) ||
-        email.toLowerCase().includes(filterBy.term.toLowerCase())
-      )
-    })
+    const contacts =
+      this.storageService.loadFromStorage('contacts') ||
+      this._contactsDb.filter(({ name, email }) => {
+        return (
+          name.toLowerCase().includes(filterBy.term.toLowerCase()) ||
+          email.toLowerCase().includes(filterBy.term.toLowerCase())
+        )
+      })
+
     this._contacts$.next(this._sort(contacts))
   }
 
