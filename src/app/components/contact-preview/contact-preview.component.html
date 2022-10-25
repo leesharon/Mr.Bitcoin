@@ -1,16 +1,16 @@
-<section class="contact-preview">
-  <div class="img-container">
-    <img
-      class="contact-img"
-      src="https://xsgames.co/randomusers/assets/avatars/male/{{
-        contact.imgIdx
-      }}.jpg"
-      alt=""
-    />
-  </div>
-  <div class="contact-info">
-    <h2 class="contact-name">{{ contact.name }}</h2>
-    <p class="contact-email">{{ contact.email }}</p>
-    <p class="contact-phone">{{ contact.phone }}</p>
-  </div>
+<section [routerLink]="['/contact', contact._id]" class="contact-preview">
+    <div class="img-container">
+        <img
+            class="contact-img"
+            src="https://xsgames.co/randomusers/assets/avatars/male/{{
+                contact.imgIdx
+            }}.jpg"
+            alt=""
+        />
+    </div>
+    <div class="contact-info">
+        <h2 class="contact-name">{{ contact.name }}</h2>
+        <p class="contact-email">{{ contact.email }}</p>
+        <p class="contact-phone">{{ contact.phone }}</p>
+    </div>
 </section>

@@ -6,8 +6,8 @@
         </div>
         <nav class="navbar">
             <a routerLink="/wallet" routerLinkActive="active">Wallet</a>
-            <a>Contacts</a>
-            <a>Statistics</a>
+            <a routerLink="/contact" routerLinkActive="active">Contacts</a>
+            <a routerLink="/statistic" routerLinkActive="active">Statistics</a>
             <div class="seperator"></div>
             <a *ngIf="loggedinUser">Logout</a>
             <a *ngIf="!loggedinUser">Signup</a>

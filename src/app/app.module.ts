@@ -11,6 +11,9 @@ import { ContactPreviewComponent } from "./components/contact-preview/contact-pr
 import { ContactFilterComponent } from "./components/contact-filter/contact-filter.component"
 import { StatisticComponent } from "./pages/statistic/statistic.component"
 import { ChartComponent } from "./components/chart/chart.component"
+import { FormsModule } from "@angular/forms"
+import { CommonModule } from "@angular/common"
+import { WalletComponent } from "./pages/wallet/wallet.component"
 
 @NgModule({
     declarations: [
@@ -22,8 +25,15 @@ import { ChartComponent } from "./components/chart/chart.component"
         ContactFilterComponent,
         StatisticComponent,
         ChartComponent,
+        WalletComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        CommonModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

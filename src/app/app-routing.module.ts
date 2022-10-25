@@ -19,7 +19,7 @@ const routes: Routes = [
         component: WalletComponent,
     },
     {
-        path: "statistics",
+        path: "statistic",
         component: StatisticComponent,
     },
 ]
