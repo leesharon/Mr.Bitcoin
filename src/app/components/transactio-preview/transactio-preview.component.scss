@@ -1,0 +1,32 @@
+@import "../../../assets/styles//setup/variables";
+
+.transaction-preview {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
+    margin-bottom: 13px;
+    margin-inline-end: 15px;
+    padding-bottom: 7px;
+
+    .transaction-header {
+        display: flex;
+        justify-content: space-between;
+        color: $primary-gray;
+        margin-bottom: 2px;
+    }
+
+    .transaction-body {
+        margin-bottom: 10px;
+    }
+
+    .transaction-footer {
+        display: flex;
+        justify-content: space-between;
+
+        .amount-btc {
+            color: $primary-gray;
+        }
+
+        .status-approved {
+            color: #7bbf7b;
+        }
+    }
+}

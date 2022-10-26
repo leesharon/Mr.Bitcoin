@@ -1,0 +1,15 @@
+<section class="transaction-preview">
+    <div class="transaction-header">
+        <span
+            >{{ transaction.at | date }},
+            {{ transaction.at | date: "HH:mm" }} </span
+        ><span>${{ transaction.amount }}</span>
+    </div>
+    <div class="transaction-body">
+        <h3>sent to: {{ transaction.to }}</h3>
+    </div>
+    <div class="transaction-footer">
+        <span class="amount-btc">₿{{ transaction.amount }}</span
+        ><span>status: <span class="status-approved">approved</span></span>
+    </div>
+</section>

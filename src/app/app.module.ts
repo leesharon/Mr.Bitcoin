@@ -17,7 +17,9 @@ import { WalletComponent } from "./pages/wallet/wallet.component"
 import { ContactEditComponent } from "./pages/contact-edit/contact-edit.component"
 import { ContactDetailsComponent } from "./components/contact-details/contact-details.component"
 import { SignupComponent } from "./pages/signup/signup.component";
-import { RecommendationComponent } from './components/recommendation/recommendation.component'
+import { RecommendationComponent } from './components/recommendation/recommendation.component';
+import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
+import { TransactioPreviewComponent } from './components/transactio-preview/transactio-preview.component'
 
 @NgModule({
     declarations: [
@@ -34,6 +36,8 @@ import { RecommendationComponent } from './components/recommendation/recommendat
         ContactEditComponent,
         SignupComponent,
         RecommendationComponent,
+        TransactionListComponent,
+        TransactioPreviewComponent,
     ],
     imports: [
         BrowserModule,
