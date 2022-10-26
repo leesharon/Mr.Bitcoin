@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { Contact } from 'src/app/models/contact.model'
 import { ContactService } from 'src/app/services/contact.service'
+import { UserService } from 'src/app/services/user.service'
 
 @Component({
   selector: 'contact-details',
@@ -12,6 +13,7 @@ import { ContactService } from 'src/app/services/contact.service'
 export class ContactDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private contactService: ContactService,
+    private userService: UserService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -30,8 +32,15 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     this.paramsSubscription.unsubscribe()
   }
 
-  onSubmit() {
-    console.log(': submit transfer')
+  onTransferFunds(amount: number) {
+    console.log('amount:', amount)
+    this.userService.transferFunds({
+      amount,
+      toId: this.contact._id,
+      to: this.contact.name,
+      at: Date.now(),
+    })
+    this.router.navigateByUrl('/contact')
   }
 
   onRemoveContact(contactId: string) {

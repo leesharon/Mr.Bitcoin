@@ -1,16 +1,15 @@
 <section *ngIf="!isSignup" class="app-header main-layout full">
-    <div class="layout-container">
-        <div class="main-logo" routerLink="/wallet">
-            <img src="../../../assets/img/bitcoin.png" alt="bitcoin" />
-            <h1>Mr.Bitcoin</h1>
-        </div>
-        <nav class="navbar">
-            <a routerLink="/wallet" routerLinkActive="active">Wallet</a>
-            <a routerLink="/contact" routerLinkActive="active">Contacts</a>
-            <a routerLink="/statistic" routerLinkActive="active">Statistics</a>
-            <div class="seperator"></div>
-            <a routerLink="/" *ngIf="loggedinUser">Logout</a>
-            <a routerLink="/" *ngIf="!loggedinUser">Signup</a>
-        </nav>
+  <div class="layout-container">
+    <div class="main-logo" routerLink="/wallet">
+      <img src="../../../assets/img/bitcoin.png" alt="bitcoin" />
+      <h1>Mr.Bitcoin</h1>
     </div>
+    <nav class="navbar">
+      <a routerLink="/wallet" routerLinkActive="active">Wallet</a>
+      <a routerLink="/contact" routerLinkActive="active">Contacts</a>
+      <a routerLink="/statistic" routerLinkActive="active">Statistics</a>
+      <div class="seperator"></div>
+      <a routerLink="/" (click)="logout()">Logout</a>
+    </nav>
+  </div>
 </section>
