@@ -11,9 +11,11 @@ export class BitcoinService {
   public getMarketPriceHistory(): Observable<unknown> {
     try {
       const apiUrl = `https://api.blockchain.info/charts/market-price?timespan=1years&format=json&cors=true`
-      const data = this.http.get(apiUrl).pipe(map((res) => res))
-
-      return data
+      return this.http.get(apiUrl).pipe(
+        map((res) => {
+          ;(res as { values: [] }).values
+        })
+      )
     } catch (err) {
       console.log(err, 'Cannot get rates')
       throw new Error()

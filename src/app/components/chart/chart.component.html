@@ -1,1 +1,8 @@
-<p>chart works!</p>
+<google-chart
+  *ngIf="chart"
+  [title]="chart.title"
+  [type]="chart.type"
+  [data]="chart.data"
+  [options]="chart.options"
+>
+</google-chart>

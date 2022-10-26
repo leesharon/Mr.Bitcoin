@@ -10,11 +10,19 @@ import { Component, OnInit } from '@angular/core'
 export class StatisticComponent implements OnInit {
   constructor(private bitcoinService: BitcoinService) {}
 
+  marketPricesHistory: any = {
+    title: 'Market Price History',
+    type: 'Line',
+    data: [],
+    options: {
+      width: 600,
+      height: 500,
+    },
+  }
+
   async ngOnInit(): Promise<void> {
-    const zibi = await lastValueFrom(
+    this.marketPricesHistory.data = await lastValueFrom(
       this.bitcoinService.getMarketPriceHistory()
     )
-    console.log(`zibi:`, zibi)
-    // if (zibi) console.log(`zibi.values:`, zibi.values)
   }
 }
