@@ -1,15 +1,15 @@
-@import "../../../assets/styles/setup/mixins";
+@import '../../../assets/styles/setup/mixins';
 .contact-list {
-    display: flex;
-    flex-direction: column;
-    max-height: 550px;
-    width: 100%;
-    overflow-y: scroll;
-    padding-inline-end: 25px;
+  display: flex;
+  flex-direction: column;
+  max-height: 550px;
+  width: 100%;
+  overflow-y: scroll;
+  padding-inline-end: 25px;
 
-    & > *:not(:last-child) {
-        border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
-    }
+  & > *:not(:last-child) {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
+  }
 
-    @include primaryScroll();
+  @include primaryScroll();
 }

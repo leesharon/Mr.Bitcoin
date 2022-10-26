@@ -1,74 +1,86 @@
-@import "../../../assets/styles/setup/mixins";
+@import '../../../assets/styles/setup/mixins';
 .signup {
+  display: flex;
+  justify-content: center;
+
+  .main-logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: 40px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: color 0.1s;
 
-    .main-logo {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        cursor: pointer;
-        transition: color 0.1s;
-
-        &:hover {
-            color: #1199fa;
-        }
-
-        img {
-            width: 40px;
-        }
-
-        h1 {
-            font-size: em(22px);
-        }
+    &:hover {
+      color: #1199fa;
     }
 
-    .main-content {
-        margin: 100px 100px 0;
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 16px;
-        }
-
-        span {
-            margin-bottom: 26px;
-            font-style: italic;
-            color: #75859f;
-            display: block;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 450px;
-
-            label {
-                font-size: 1.1em;
-            }
-
-            input {
-                @include primaryInput();
-                margin-bottom: 25px;
-            }
-
-            button {
-                @include primaryButton();
-                height: 51px;
-                font-size: 1.2em;
-                font-family: Dosis-Bold;
-            }
-        }
+    img {
+      width: 40px;
     }
 
-    .img-hero {
-        object-fit: cover;
-        height: 100vh;
-        margin-inline-start: auto;
-        width: 45%;
+    h1 {
+      font-size: em(22px);
     }
+  }
+
+  .main-content {
+    margin: 100px 100px 0;
+
+    a {
+      color: #1199fa;
+      cursor: pointer;
+      font-size: 1.2em;
+      display: inline-block;
+      margin-bottom: 10px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 16px;
+    }
+
+    span {
+      margin-bottom: 26px;
+      font-style: italic;
+      color: #75859f;
+      display: block;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 450px;
+
+      label {
+        font-size: 1.1em;
+      }
+
+      input {
+        @include primaryInput();
+        margin-bottom: 25px;
+      }
+
+      button {
+        @include primaryButton();
+        height: 51px;
+        font-size: 1.2em;
+        font-family: Dosis-Bold;
+      }
+    }
+  }
+
+  .img-hero {
+    object-fit: cover;
+    height: 100vh;
+    margin-inline-start: auto;
+    width: 45%;
+  }
 }
