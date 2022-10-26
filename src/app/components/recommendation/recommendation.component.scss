@@ -15,8 +15,7 @@
         }
 
         h2 {
-            font-family: livvic-bold;
-            font-size: 2.2em;
+            font-size: 2.4em;
             font-weight: 700;
 
             span {
@@ -36,6 +35,10 @@
         .quotes {
             width: 67px;
             margin-bottom: -24px;
+            color: white;
+            filter: invert(53%) sepia(72%) saturate(1675%) hue-rotate(156deg)
+                brightness(102%) contrast(84%);
+            opacity: 0.5;
         }
 
         p {
@@ -43,11 +46,12 @@
             line-height: 22px;
             margin-bottom: 19px;
             color: #75859f;
+            z-index: 10;
+            position: relative;
         }
 
         h3 {
             color: #139bf9;
-            font-family: livvic-bold;
             font-size: 18px;
             font-weight: 700;
             line-height: 28px;
@@ -55,7 +59,6 @@
         }
 
         h4 {
-            font-family: livvic-medium-italic;
             font-size: 13px;
             font-weight: 500;
             line-height: 18px;

@@ -2,7 +2,7 @@
     <div class="info">
         <div class="balance">
             <div class="header">
-                <h3>{{ user.name }}'s balance</h3>
+                <h3>{{ user.username }}'s balance</h3>
                 <span>Current BTC/USD:</span>
             </div>
             <p>
@@ -11,7 +11,9 @@
             <p>
                 Equals to(USD): <span>${{ user.balance }}</span>
             </p>
-            <button class="btn-contacts">View contacts</button>
+            <button routerLink="/contact" class="btn-contacts">
+                View contacts
+            </button>
         </div>
         <section *ngIf="user.transactions.length" class="transactions">
             <h3>Your Transactions</h3>

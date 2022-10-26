@@ -6,9 +6,10 @@
     <div class="main-content">
         <h1>Sign up</h1>
         <span>Join free today and get $50 worth of BTC</span>
-        <form>
+        <form (ngSubmit)="signup(username.value)">
             <label for="username">Username</label>
             <input
+                #username
                 type="text"
                 id="username"
                 placeholder="Enter your username"
