@@ -15,10 +15,21 @@
     <div class="info-body">
       <h2>{{ contact.name }}</h2>
       <h3>{{ contact.email }}</h3>
-      <form (ngSubmit)="onTransferFunds(+amount.value)">
-        <input #amount type="number" placeholder="Enter amount to transfer" />
-        <button class="btn-transfer">Transfer</button>
+      <form #form="ngForm" (ngSubmit)="onTransferFunds(+amount.value)">
+        <input
+          ngModel
+          min="0"
+          required
+          #amount="ngModel"
+          name="amount"
+          type="number"
+          placeholder="Enter amount to transfer"
+        />
+        <button [disabled]="form.invalid" class="btn-transfer">Transfer</button>
       </form>
+      <p class="errors" *ngIf="amount.invalid && amount.touched">
+        You must enter positive amount to transfer!
+      </p>
       <p>
         The amount to be transferred is in USD. Once the transaction is complete
         there is no way to reverse it.

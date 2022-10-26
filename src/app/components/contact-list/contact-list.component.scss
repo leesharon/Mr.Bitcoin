@@ -1,35 +1,35 @@
 .contact-list {
-    display: flex;
-    flex-direction: column;
-    max-height: 550px;
-    width: 100%;
-    overflow-y: scroll;
-    padding-inline-end: 25px;
+  display: flex;
+  flex-direction: column;
+  max-height: 550px;
+  width: 100%;
+  overflow-y: scroll;
+  padding-inline-end: 25px;
 
-    & > *:not(:last-child) {
-        border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
-    }
+  & > *:not(:last-child) {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.496);
+  }
 }
 
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
-    scrollbar-width: auto;
-    scrollbar-color: linear-gradient(90deg, #1199fa, #11d0fa);
+  scrollbar-width: auto;
+  scrollbar-color: linear-gradient(90deg, #1199fa, #11d0fa);
 
-    /* Chrome, Edge, and Safari */
-    &::-webkit-scrollbar {
-        width: 16px;
-    }
+  /* Chrome, Edge, and Safari */
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
 
-    &::-webkit-scrollbar-track {
-        background: #ffffff;
-        border-radius: 10px;
-    }
+  &::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 10px;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        background: linear-gradient(90deg, #1199fa, #11d0fa);
-        border-radius: 10px;
-        border: 2px solid #ffffff;
-    }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #1199fa, #11d0fa);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+  }
 }
