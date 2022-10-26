@@ -53,7 +53,7 @@
     }
 
     .transactions {
-        overflow-y: scroll;
+        overflow-y: auto;
         @include primaryScroll();
     }
 }

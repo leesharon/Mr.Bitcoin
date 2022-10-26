@@ -16,7 +16,32 @@ export class UserService {
             JSON.parse(sessionStorage.getItem("loggedinUser")!) || {
                 username: "Guest",
                 balance: 50,
-                transactions: [],
+                transactions: [
+                    {
+                        amount: 5,
+                        toId: "5a566402abce24c6bfe4699d",
+                        to: "Dominique Soto",
+                        at: 1666795387188,
+                    },
+                    {
+                        amount: 12,
+                        toId: "5a56640298ab77236845b82b",
+                        to: "Glenna Santana",
+                        at: 1666795395175,
+                    },
+                    {
+                        amount: 14,
+                        toId: "5a5664025f6ae9aa24a99fde",
+                        to: "Hallie Mclean",
+                        at: 1666795451054,
+                    },
+                    {
+                        amount: 20,
+                        toId: "5a5664025f6ae9aa24a99fde",
+                        to: "Parsons Norris",
+                        at: 1666795462923,
+                    },
+                ],
             }
         )
     }
@@ -25,7 +50,32 @@ export class UserService {
         this.user = {
             username,
             balance: 50,
-            transactions: [],
+            transactions: [
+                {
+                    amount: 5,
+                    toId: "5a566402abce24c6bfe4699d",
+                    to: "Dominique Soto",
+                    at: 1666795387188,
+                },
+                {
+                    amount: 12,
+                    toId: "5a56640298ab77236845b82b",
+                    to: "Glenna Santana",
+                    at: 1666795395175,
+                },
+                {
+                    amount: 14,
+                    toId: "5a5664025f6ae9aa24a99fde",
+                    to: "Hallie Mclean",
+                    at: 1666795451054,
+                },
+                {
+                    amount: 20,
+                    toId: "5a5664025f6ae9aa24a99fde",
+                    to: "Parsons Norris",
+                    at: 1666795462923,
+                },
+            ],
         }
         this.storageService.saveToStorage("user", this.user)
         sessionStorage.setItem("loggedinUser", JSON.stringify(this.user))
