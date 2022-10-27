@@ -1,33 +1,24 @@
 <section class="wallet">
-    <div class="info">
-        <div class="balance">
-            <div class="header">
-                <h3>{{ user.username }}'s balance</h3>
-                <span>Current BTC/USD:</span>
-            </div>
-            <p>
-                Equity Value(BTC):
-                <span class="balance-btc">₿{{ user.balance }}</span>
-            </p>
-            <p>
-                Equals to(USD):
-                <span class="balance-usd">${{ user.balance }}</span>
-            </p>
-            <button routerLink="/contact" class="btn-contacts">
-                View contacts
-            </button>
-        </div>
-        <section *ngIf="user.transactions.length" class="transactions">
-            <h3>Your Transactions</h3>
-            <transaction-list
-                [transactions]="user.transactions"
-            ></transaction-list>
-        </section>
+  <div class="info">
+    <div class="balance">
+      <div class="header">
+        <h3>{{ user.username }}'s balance</h3>
+        <span>Current BTC/USD:</span>
+      </div>
+      <p>
+        Equity Value(BTC):
+        <span class="balance-btc">₿{{ user.balance }}</span>
+      </p>
+      <p>
+        Equals to(USD):
+        <span class="balance-usd">${{ user.balance }}</span>
+      </p>
+      <button routerLink="/contact" class="btn-contacts">View contacts</button>
     </div>
-    <chart
-        *ngIf="marketPricesHistory"
-        class="chart-container"
-        [chartHeight]="230"
-        [data]="marketPricesHistory"
-    ></chart>
+    <section *ngIf="user.transactions.length" class="transactions">
+      <h3>Your Transactions</h3>
+      <transaction-list [transactions]="user.transactions"></transaction-list>
+    </section>
+  </div>
+  <chart class="chart-container" [chartHeight]="230"></chart>
 </section>
