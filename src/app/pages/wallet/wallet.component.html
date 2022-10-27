@@ -24,5 +24,10 @@
             ></transaction-list>
         </section>
     </div>
-    <chart class="chart-container" [chartHeight]="230"></chart>
+    <chart
+        *ngIf="marketPricesHistory"
+        class="chart-container"
+        [chartHeight]="230"
+        [data]="marketPricesHistory"
+    ></chart>
 </section>

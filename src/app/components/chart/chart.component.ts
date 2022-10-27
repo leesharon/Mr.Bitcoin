@@ -1,7 +1,7 @@
 import { BitcoinService } from "./../../services/bitcoin.service"
 import { Component, Input, OnInit } from "@angular/core"
 import { ChartConfiguration, ChartOptions } from "chart.js"
-import { lastValueFrom } from "rxjs"
+import { ChartData } from "src/app/models/chart-data.model"
 
 @Component({
     selector: "chart",
@@ -9,7 +9,7 @@ import { lastValueFrom } from "rxjs"
     styleUrls: ["./chart.component.scss"],
 })
 export class ChartComponent implements OnInit {
-    constructor(private bitcoinService: BitcoinService) {}
+    constructor() {}
 
     title = "ng2-charts-demo"
 
@@ -34,15 +34,13 @@ export class ChartComponent implements OnInit {
     public lineChartLegend = true
 
     @Input() chartHeight!: number
+    @Input() data!: ChartData
 
     async ngOnInit() {
-        const marketPricesHistory =
-            (await this.bitcoinService.getMarketPriceHistory()) as {
-                labels: string[]
-                values: number[]
-            }
-        this.lineChartData.labels = marketPricesHistory.labels
-        this.lineChartData.datasets[0].data = marketPricesHistory.values
-        console.log("this.marketPriceHistory: ", marketPricesHistory)
+        this.lineChartData.labels = this.data.labels
+        this.lineChartData.datasets[0].data = this.data.values
+        this.lineChartData.datasets[0].label = this.data.mainTitle
+        this.lineChartData.datasets[0].borderColor = this.data.mainColor
+        this.lineChartData.datasets[0].backgroundColor = this.data.mainColor
     }
 }
