@@ -14,6 +14,5 @@ export class WalletComponent implements OnInit {
 
     ngOnInit(): void {
         this.user = this.UserService.getUser()
-        console.log("this.user.transactions: ", this.user.transactions)
     }
 }

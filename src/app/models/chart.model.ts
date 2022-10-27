@@ -1,8 +1,8 @@
-import { ChartType, Row } from 'angular-google-charts'
+import { ChartType, Row } from "angular-google-charts"
 
 export interface Chart {
-  title: string
-  type: ChartType
-  data: Row[]
-  options: object
+    title: string
+    type: ChartType
+    data: Row[]
+    options: object
 }
