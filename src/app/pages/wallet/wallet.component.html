@@ -1,41 +1,41 @@
 <section class="wallet">
-    <div class="info">
-        <div class="balance">
-            <div class="header">
-                <h3>{{ user.username }}'s balance</h3>
-                <div class="rate-container">
-                    <p>Current BTC/USD:</p>
-                    <div class="price-container">
-                        <span class="badge">live</span>
-                        <h2 class="rate">${{ 1 / btcRate | number }}</h2>
-                    </div>
-                    <p class="wallstreet">According to Wallstreet</p>
-                </div>
-            </div>
-            <p class="equity">
-                Total Balance (USD):
-                <span class="balance-btc">${{ user.balance }}</span>
-            </p>
-            <p>
-                Equals to (BTC):
-                <span class="balance-usd">₿{{ user.balance * btcRate }}</span>
-            </p>
-            <button routerLink="/contact" class="btn-contacts">
-                View contacts
-            </button>
+  <div class="info">
+    <div class="balance">
+      <div class="header">
+        <h3>{{ user.username }}'s balance</h3>
+        <div class="rate-container">
+          <p>Current BTC/USD:</p>
+          <div class="price-container">
+            <span class="badge">live</span>
+            <h2 class="rate">${{ 1 / btcRate | number }}</h2>
+          </div>
+          <p class="wallstreet">According to Wallstreet</p>
         </div>
-        <section *ngIf="user.transactions.length" class="transactions">
-            <h3>Your Transactions</h3>
-            <transaction-list
-                [btcRate]="btcRate"
-                [transactions]="user.transactions"
-            ></transaction-list>
-        </section>
+      </div>
+      <p class="equity">
+        Total Balance (USD):
+        <span class="balance-btc">${{ user.balance }}</span>
+      </p>
+      <p>
+        Equals to (BTC):
+        <span class="balance-usd"
+          >₿{{ (user.balance * btcRate).toFixed(8) }}</span
+        >
+      </p>
+      <button routerLink="/contact" class="btn-contacts">View contacts</button>
     </div>
-    <chart
-        *ngIf="marketPricesHistory"
-        class="chart-container"
-        [chartHeight]="230"
-        [data]="marketPricesHistory"
-    ></chart>
+    <section *ngIf="user.transactions.length" class="transactions">
+      <h3>Your Transactions</h3>
+      <transaction-list
+        [btcRate]="btcRate"
+        [transactions]="user.transactions"
+      ></transaction-list>
+    </section>
+  </div>
+  <chart
+    *ngIf="marketPricesHistory"
+    class="chart-container"
+    [chartHeight]="230"
+    [data]="marketPricesHistory"
+  ></chart>
 </section>

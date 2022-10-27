@@ -88,7 +88,7 @@ export class UserService {
 
   transferFunds(transaction: Transaction) {
     const loggedinUser = this.getUser()
-    loggedinUser.transactions.push(transaction)
+    loggedinUser.transactions.unshift(transaction)
     loggedinUser.balance -= transaction.amount
     this.saveUser(loggedinUser)
     sessionStorage.setItem('loggedinUser', JSON.stringify(loggedinUser))
