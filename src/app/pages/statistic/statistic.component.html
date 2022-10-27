@@ -1,1 +1,7 @@
-<chart></chart>
+<section class="statistic">
+    <h1>BTC Statistics</h1>
+    <div class="charts-container">
+        <chart *ngIf="marketPricesHistory" [data]="marketPricesHistory"></chart>
+        <chart *ngIf="avgBlockSize" [data]="avgBlockSize"></chart>
+    </div>
+</section>

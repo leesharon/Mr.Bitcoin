@@ -1,4 +1,3 @@
-import { BitcoinService } from './../../services/bitcoin.service'
 import { UserService } from '../../services/user.service'
 import { Component, OnInit } from '@angular/core'
 import { User } from 'src/app/models/user.model'
@@ -9,17 +8,11 @@ import { User } from 'src/app/models/user.model'
   styleUrls: ['./wallet.component.scss'],
 })
 export class WalletComponent implements OnInit {
-  constructor(
-    private UserService: UserService,
-    private bitcoinService: BitcoinService
-  ) {}
+  constructor(private UserService: UserService) {}
 
   user!: User
-  btcRate!: number
 
-  async ngOnInit() {
+  ngOnInit(): void {
     this.user = this.UserService.getUser()
-
-    this.btcRate = (await this.bitcoinService.getRate()) as number
   }
 }
