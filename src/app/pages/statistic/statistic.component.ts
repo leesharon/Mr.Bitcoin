@@ -10,24 +10,6 @@ import { BitcoinService } from "src/app/services/bitcoin.service"
 export class StatisticComponent implements OnInit {
     constructor(private bitcoinService: BitcoinService) {}
 
-    boxesData: {}[] = [
-        {
-            symbol: "$",
-            title: "Total BTC",
-            amount: 100,
-        },
-        {
-            symbol: "$",
-            title: "Total USD",
-            amount: 100,
-        },
-        {
-            symbol: "$",
-            title: "Total BTC",
-            amount: 100,
-        },
-    ]
-
     marketPricesHistory!: ChartData
     avgBlockSize!: ChartData
 
