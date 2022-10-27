@@ -1,14 +1,15 @@
-import { Component, Input, OnInit } from "@angular/core"
-import { Transaction } from "src/app/models/transaction.model"
+import { Component, Input, OnInit } from '@angular/core'
+import { Transaction } from 'src/app/models/transaction.model'
 
 @Component({
-    selector: "transaction-list",
-    templateUrl: "./transaction-list.component.html",
-    styleUrls: ["./transaction-list.component.scss"],
+  selector: 'transaction-list',
+  templateUrl: './transaction-list.component.html',
+  styleUrls: ['./transaction-list.component.scss'],
 })
 export class TransactionListComponent implements OnInit {
-    constructor() {}
+  constructor() {}
 
-    @Input() transactions!: Transaction[]
-    ngOnInit(): void {}
+  @Input() transactions!: Transaction[]
+  @Input() btcRate!: number
+  ngOnInit(): void {}
 }
