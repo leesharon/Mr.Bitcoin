@@ -1,0 +1,90 @@
+@mixin layoutGTC($max) {
+    grid-template-columns:
+        minmax($layoutPadding, 1fr)
+        minmax(auto, $max)
+        minmax($layoutPadding, 1fr);
+}
+
+@mixin for-mobile-layout {
+    @media (max-width: $break-narrow) {
+        @content;
+    }
+}
+
+@mixin for-narrow-layout {
+    @media (min-width: $break-narrow) {
+        @content;
+    }
+}
+
+@mixin for-small-layout {
+    @media (min-width: $break-small) {
+        @content;
+    }
+}
+
+@mixin for-normal-layout {
+    @media (min-width: $break-normal) {
+        @content;
+    }
+}
+
+@mixin for-wide-layout {
+    @media (min-width: $break-wide) {
+        @content;
+    }
+}
+
+@mixin flexAlign($main, $cross, $dir: row) {
+    display: flex;
+    align-items: $main;
+    justify-content: $cross;
+    flex-direction: $dir;
+}
+
+@mixin primaryButton() {
+    padding: 8px 24px;
+    border-radius: 4px;
+    color: white;
+    background: linear-gradient(90deg, #1199fa, #11d0fa);
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+@mixin primaryInput($width: 100%) {
+    margin-block-start: 10px;
+    height: 51px;
+    padding: 13px 16px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    line-height: 1.15;
+    width: $width;
+    font-size: 18px;
+    border: none;
+    background: #1b2332;
+    color: white;
+}
+
+@mixin primaryScroll {
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    scrollbar-width: auto;
+    scrollbar-color: linear-gradient(90deg, #1199fa, #11d0fa);
+
+    /* Chrome, Edge, and Safari */
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #ffffff;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(90deg, #1199fa, #11d0fa);
+        border-radius: 10px;
+        border: 2px solid #ffffff;
+    }
+}
