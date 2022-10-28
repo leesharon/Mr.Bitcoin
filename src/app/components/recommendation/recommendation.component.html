@@ -1,26 +1,22 @@
 <section class="recommendations">
-    <div class="heading-container">
-        <h2>What people think of <span>Our Wallet.</span></h2>
-    </div>
-    <div class="recommendations-container">
-        <article
-            *ngFor="let recommendation of recommendations"
-            class="recommendation"
-        >
-            <img
-                class="quotes"
-                src="../../../assets/img/icon-quotes.svg"
-                alt="quotes"
-            />
-            <p>{{ recommendation.txt }}</p>
-            <h3>{{ recommendation.name }}</h3>
-            <div class="img-container">
-                <img
-                    class="profile-pic"
-                    src="{{ recommendation.imgSrc }}"
-                    alt="portrait"
-                />
-            </div>
-        </article>
-    </div>
+  <div class="heading-container">
+    <h2>What people think of <span>Our Wallet.</span></h2>
+  </div>
+  <div class="recommendations-container">
+    <article
+      *ngFor="let recommendation of recommendations"
+      class="recommendation"
+    >
+      <img class="quotes" src="./assets/img/icon-quotes.svg" alt="quotes" />
+      <p>{{ recommendation.txt }}</p>
+      <h3>{{ recommendation.name }}</h3>
+      <div class="img-container">
+        <img
+          class="profile-pic"
+          src="{{ recommendation.imgSrc }}"
+          alt="portrait"
+        />
+      </div>
+    </article>
+  </div>
 </section>
